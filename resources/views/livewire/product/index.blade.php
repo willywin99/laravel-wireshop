@@ -1,34 +1,40 @@
 <div class="container">
 
-    @if ($formVisible)
-        @livewire('product.create')
-    @endif
+	@if ($formVisible)
+		@livewire('product.create')
+	@endif
 
 		<div class="row justify-content-center">
 				<div class="col-md-8">
 						<div class="card">
 								<div class="card-header">
-                                    {{ __('Product') }}
-                                    <button wire:click="$toggle('formVisible')" class="btn btn-sm btn-primary">Create</button>
-                                </div>
+										{{ __('Product') }}
+										<button wire:click="$toggle('formVisible')" class="btn btn-sm btn-primary">Create</button>
+								</div>
 
 								<div class="card-body">
 
-                                        <div class="row">
-                                            <div class="col">
-                                                    <select wire:model="paginate" name="" id="" class="form-control-sm w-auto">
-                                                            <option value="5">5</option>
-                                                            <option value="10">10</option>
-                                                            <option value="15">15</option>
-                                                            <option value="20">20</option>
-                                                    </select>
-                                            </div>
-                                            <div class="col">
-                                                <input wire:model="search" type="text" class="form-control form-control-sm" placeholder="Search">
-                                            </div>
-                                        </div>
+									@if (session()->has('message'))
+										<div class="alert alert-success">
+											{{ session('message') }}
+										</div>
+									@endif
 
-                                        <hr>
+								<div class="row">
+										<div class="col">
+											<select wire:model="paginate" name="" id="" class="form-control-sm w-auto">
+												<option value="5">5</option>
+												<option value="10">10</option>
+												<option value="15">15</option>
+												<option value="20">20</option>
+											</select>
+										</div>
+										<div class="col">
+											<input wire:model="search" type="text" class="form-control form-control-sm" placeholder="Search">
+										</div>
+								</div>
+
+								<hr>
 
 										<table class="table">
 												<thead class="thead-dark">
