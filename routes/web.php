@@ -28,3 +28,6 @@ Route::livewire('/admin/product', 'product.index')
 // Route::get('/admin/product', \App\Http\Livewire\Product\Index::class)
 //     ->name('admin.product')
 //     ->middleware('auth');
+
+Route::livewire('/shop', 'shop.index')
+    ->name('shop.index');
