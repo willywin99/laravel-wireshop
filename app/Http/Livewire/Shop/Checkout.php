@@ -28,8 +28,8 @@ class Checkout extends Component
     public function checkout()
     {
         $this->validate([
-            'first_name' => 'requred',
-            'last_name' => 'requred',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email',
             'phone' => 'required',
             'address' => 'required',
